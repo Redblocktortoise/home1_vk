@@ -14,14 +14,14 @@ class TestExample(BaseCase):
         url = 1
         assert url == 1
 
-    @pytest.mark.UI2()
+    @pytest.mark.UI()
     def test_login(self):
         self.try_login()
         self.driver.implicitly_wait(10)
         url = self.driver.current_url
         assert url == "https://target.my.com/dashboard"
 
-    @pytest.mark.UI1()
+    @pytest.mark.UI()
     def test_logout(self):
         self.try_login()
         # self.driver.implicitly_wait(10)
